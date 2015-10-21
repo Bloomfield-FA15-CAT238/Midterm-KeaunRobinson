@@ -8,12 +8,14 @@ public class GameControler : MonoBehaviour {
 	public Text letters;
 	public Canvas ui;
 	public bool gameOn = false;
+	public Button button;
 
 
 	// Use this for initialization
 	void Start () {
 		ui.enabled = true;
 		gameOn = true;
+
 	}
 	
 	// Update is called once per frame
@@ -24,13 +26,15 @@ public class GameControler : MonoBehaviour {
 		else
 			letters.text = "Your time was " + timer;
 	}
-		public void Respawn(){
+		
+	public void Respawn(){
 		player.gameObject.transform.position = spawner.transform.position;
-		}
+	}
 
-		public void WinCondition(){
+	public void WinCondition(){
 		gameOn = false;
 		Time.timeScale = 0;
+
 
 	}
 
